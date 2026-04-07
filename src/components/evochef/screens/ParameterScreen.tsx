@@ -31,9 +31,9 @@ const ParameterScreen = ({ modeIndex, activeParam, temp, time, crispnessIndex }:
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', background: COLORS.bg }}>
       {/* Top - Mode */}
-      <div style={{ height: '30%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <div style={{ fontSize: 28, color: COLORS.text }}>{mode.icon}</div>
-        <div style={{ fontSize: 14, fontWeight: 700, color: COLORS.text, letterSpacing: 2, marginTop: 2 }}>{mode.name}</div>
+      <div style={{ height: '20%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ fontSize: 22, color: COLORS.text }}>{mode.icon}</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.text, letterSpacing: 2, marginTop: 1 }}>{mode.name}</div>
       </div>
 
       {/* Middle - Editable params */}
