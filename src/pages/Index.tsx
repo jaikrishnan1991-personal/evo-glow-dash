@@ -1,16 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import EvochefSimulator from '@/components/evochef/EvochefSimulator';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      background: '#050505',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 24,
+      fontFamily: "'Inter', sans-serif",
+    }}>
+      <EvochefSimulator />
+      <div style={{ color: '#444', fontSize: 12, textAlign: 'center', lineHeight: 1.8 }}>
+        <span style={{ color: '#666' }}>←→</span> Navigate modes &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>↑↓</span> Adjust values &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>Enter</span> Confirm &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>Esc</span> Back &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>E</span> Error demo
+      </div>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
