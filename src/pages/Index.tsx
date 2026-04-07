@@ -15,8 +15,8 @@ const Index = () => {
     }}>
       <EvochefSimulator />
       <div style={{ color: '#444', fontSize: 12, textAlign: 'center', lineHeight: 1.8 }}>
-        <span style={{ color: '#666' }}>←→</span> Navigate modes &nbsp;·&nbsp;
-        <span style={{ color: '#666' }}>↑↓</span> Adjust values &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>↑↓</span> Scroll modes &nbsp;·&nbsp;
+        <span style={{ color: '#666' }}>←→</span> Cycle params &nbsp;·&nbsp;
         <span style={{ color: '#666' }}>Enter</span> Confirm &nbsp;·&nbsp;
         <span style={{ color: '#666' }}>Esc</span> Back &nbsp;·&nbsp;
         <span style={{ color: '#666' }}>E</span> Error demo
