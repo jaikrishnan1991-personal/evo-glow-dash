@@ -37,7 +37,7 @@ const ParameterScreen = ({ modeIndex, activeParam, temp, time, crispnessIndex }:
       </div>
 
       {/* Middle - Editable params */}
-      <div style={{ height: '45%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '0 10px' }}>
+      <div style={{ height: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 5, padding: '0 10px' }}>
         <div style={paramStyle('temp')}>
           <span style={{ fontSize: 8, color: COLORS.textDim, fontWeight: 600 }}>TEMP</span>
           <span style={{ fontSize: 11, color: activeParam === 'temp' ? COLORS.active : COLORS.text, fontWeight: 700 }}>{temp}°C</span>
