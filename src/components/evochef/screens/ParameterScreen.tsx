@@ -57,7 +57,9 @@ const ParameterScreen = ({ modeIndex, activeParam, tempA, tempB, time, crispness
         ) : (
           <div style={paramStyle('tempA')}>
             <span style={{ fontSize: 7, color: COLORS.textDim, fontWeight: 600 }}>TEMP</span>
-            <span style={{ fontSize: 10, color: activeParam === 'tempA' ? COLORS.active : COLORS.text, fontWeight: 700 }}>{tempA}°C</span>
+            <span style={{ fontSize: 10, color: activeParam === 'tempA' ? COLORS.active : (mode.id === 'dosa' || mode.id === 'crepe' ? COLORS.textDim : COLORS.text), fontWeight: 700 }}>
+              {mode.id === 'dosa' || mode.id === 'crepe' ? 'AUTO' : `${tempA}°C`}
+            </span>
           </div>
         )}
         <div style={paramStyle('time')}>

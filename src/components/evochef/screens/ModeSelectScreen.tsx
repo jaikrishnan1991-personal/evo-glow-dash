@@ -46,7 +46,7 @@ const ModeSelectScreen = ({ modeIndex, currentTempA, currentTempB, wifiConnected
             <ParamRow label="ZONE B" value={`${mode.defaultTempB}°C`} />
           </>
         ) : (
-          <ParamRow label="TEMP" value={`${mode.defaultTemp}°C`} />
+          <ParamRow label="TEMP" value={mode.id === 'dosa' || mode.id === 'crepe' ? 'AUTO' : `${mode.defaultTemp}°C`} />
         )}
         <ParamRow label="TIME" value={formatTime(mode.defaultTime)} />
         <ParamRow label="CRISP" value={mode.crispness} />

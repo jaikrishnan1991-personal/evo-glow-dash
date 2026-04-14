@@ -40,8 +40,11 @@ type Action =
 
 const getParamFields = (modeIndex: number): ParamField[] => {
   const mode = COOKING_MODES[modeIndex];
-  const fields: ParamField[] = ['tempA'];
-  if (mode.dualZone) fields.push('tempB');
+  const fields: ParamField[] = [];
+  if (mode.id !== 'dosa' && mode.id !== 'crepe') {
+    fields.push('tempA');
+    if (mode.dualZone) fields.push('tempB');
+  }
   fields.push('time', 'crispness');
   return fields;
 };
@@ -51,7 +54,7 @@ const initialState = (modeIndex = 0): State => {
   return {
     screen: 'boot',
     modeIndex,
-    activeParam: 'tempA',
+    activeParam: getParamFields(modeIndex)[0],
     tempA: mode.defaultTemp,
     tempB: mode.defaultTempB,
     time: mode.defaultTime,
@@ -80,11 +83,11 @@ function reducer(state: State, action: Action): State {
         tempB: mode.defaultTempB,
         time: mode.defaultTime,
         crispnessIndex: CRISPNESS_LEVELS.indexOf(mode.crispness),
-        activeParam: 'tempA',
+        activeParam: getParamFields(idx)[0],
       };
     }
     case 'ENTER_PARAMS':
-      return { ...state, screen: 'paramAdjust', activeParam: 'tempA' };
+      return { ...state, screen: 'paramAdjust', activeParam: getParamFields(state.modeIndex)[0] };
     case 'CYCLE_PARAM': {
       const params = getParamFields(state.modeIndex);
       const ci = (params.indexOf(state.activeParam) + action.dir + params.length) % params.length;
